@@ -39,9 +39,9 @@ class _ShippingAddressesViewState extends State<ShippingAddressesView> {
                     itemBuilder: (context, index){
                       final card = controller.cards[index];
                       return CategoryCheckedBox(
-                        isNotificationsEnabled: controller.selectedCard == card,
+                        isNotificationsEnabled: card == controller.selectedCard,
                         onTap: () {
-                          controller.selectedCard = card;
+                          controller.selectCard(card);
                           setState(() {});
                         },
                         title1: card.title1,
